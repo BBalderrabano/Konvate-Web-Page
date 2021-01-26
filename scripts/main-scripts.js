@@ -1,7 +1,6 @@
 
 $( document ).ready(function() {
 	
-
 	$(".deck-display").hover(
 		
 		function(){
@@ -34,7 +33,6 @@ $( document ).ready(function() {
 								.dequeue()
 								.stop()
 								.animate({
-									
 									opacity: "1"
 								  }, 600);
 			
@@ -43,7 +41,6 @@ $( document ).ready(function() {
 			
 			$(this).find("h3")
 								.animate({
-									
 									opacity: "0"
 								  }, 600 ,
 			  function(){

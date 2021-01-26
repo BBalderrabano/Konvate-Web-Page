@@ -32,60 +32,15 @@ In aliquet felis orci. Cras ornare dapibus auctor. Vestibulum vel eros at dui ve
 			<!-- hola-->
 			
 			<div class="deck-holder">
-			
-			<h2>Mazos Destacados</h2>
-			
-			<section class="deck-display" style="background-image: url(pictures/carlos-amaral-elf-archer.jpg);">
-			<h1>Arquero</h1>
-			<h3> Dino no hace mas que chupar muchos pitos en Capilla. Cuenta la leyenda que tiene el record mundial de chupapitos.</h3>
-			</section>
-			
-			<section class="deck-display" style="background-image: url(pictures/manuel-castanon-the-hopeful-knight-final.jpg);">
-			<h1>Caballero</h1>
-			<h3> Dino no hace mas que chupar muchos pitos en Capilla. Cuenta la leyenda que tiene el record mundial de chupapitos.</h3>
-			</section>
-			
-			<section class="deck-display" style="background-image: url(pictures/markus-neidel-ork-axe.jpg);;">
-			<h1>Orco</h1>
-			<h3> Dino no hace mas que chupar muchos pitos en Capilla. Cuenta la leyenda que tiene el record mundial de chupapitos.</h3>
-			</section>
-			
-			<br>
-			
-			<section class="deck-display" style="background-image: url(pictures/peter-ortiz-necro-final2.jpg);">
-			<h1>Nigromante</h1>
-			<h3> Dino no hace mas que chupar muchos pitos en Capilla. Cuenta la leyenda que tiene el record mundial de chupapitos.</h3>
-			</section>
-			
-			<section class="deck-display" style="background-image: url(pictures/d9uwlmx-54dae3c5-90c3-4186-a674-b3aa8959aef7.jpg);">
-			<h1>Mago</h1>
-			<h3> Dino no hace mas que chupar muchos pitos en Capilla. Cuenta la leyenda que tiene el record mundial de chupapitos.</h3>
-			</section>
-			
-			<section class="deck-display" style="background-image: url(pictures/cole-eastburn-dwarfblacksmith.jpg);">
-			<h1>Enano</h1>
-			<h3> Dino no hace mas que chupar muchos pitos en Capilla. Cuenta la leyenda que tiene el record mundial de chupapitos.</h3>
-			</section>
+				<h2>Mazos Destacados</h2>
+				
+				<div class="deck-sorter">
+				
+					<?php include("highlighted-deck.php") ?>
+					
+				</div>
 			</div>
-			
-			
-			<!--
-			<form method = "POST" action="php/validate.php">
-				<p>Nombre de usuario</p>
-				<input id="username" name="username"></input>
-				
-				<p>Password</p>
-				<input id="password" name="password" type="password"></input>
-				
-				php 
-					if($_GET["error"]){
-						echo "<p> No existe ese usuario </p>"; 
-					}
-				?>
-				
-				<input type="submit" value="Ingresar"></input>
-			</form>
-			-->
+
 		</div>
 	</body>
 </html>

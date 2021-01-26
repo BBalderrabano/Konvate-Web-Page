@@ -78,13 +78,18 @@ a{
 .deck-holder {
 	text-align: center;
 	background-color: #f6f6f8;
-	
-
+	position: absolute;
+	width: 100%;
 }
+
+.deck-sorter{
+	display: table;
+}
+
 .deck-display{
 	transition: transform .6s;
-	width: 20vh;
-	height: 55vh;
+	width: 400px;
+	height: 550px;
     border-style: groove;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -98,13 +103,11 @@ a{
 	margin: 8px;
 	background-size: cover;
 	background-position: center;
-	
 }
+
 .deck-display:hover{
 	transform: scale(1.05);
 }
-
-
 
 .deck-display h1{
 	margin: 0;
@@ -136,14 +139,6 @@ a{
 	padding: 0;
 	opacity: 0;
 }
-
-	
-	
-    /* height: 50px; */
-}
-
-
-
 
 /** ----------------------------MEDIA CSS------------------- */
 
