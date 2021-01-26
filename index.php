@@ -34,7 +34,7 @@ In aliquet felis orci. Cras ornare dapibus auctor. Vestibulum vel eros at dui ve
 			</h2>
 			
 			<div class="deck-holder">
-			
+			<!-- -->
 				<div class="deck-wrapper"">
 					<section class="deck-display" style="background-image: url(pictures/carlos-amaral-elf-archer.jpg);">
 						<h1>Flecha</h1>
