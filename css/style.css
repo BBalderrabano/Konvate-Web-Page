@@ -6,9 +6,11 @@
 }
 
 html{
-	background-color:white;	
+	background: url("../img/wallpaper2you_276915.jpg") no-repeat fixed;
 	color:white;
 	font-family: 'OpenSansCondensed';
+	
+	
 	
 }
 
@@ -16,6 +18,7 @@ header{
 	min-height:350px;
 	background-image: url("../pictures/carlos-amaral-elf-archer.jpg");
 	background-size: contain;
+	display: none;
 }
 
 h1{
@@ -51,7 +54,7 @@ a{
 #wrapper{
 	width:100%;
 	height:100%;
-	color:green;
+	color:white;
 }
 
 .menu-bar{
@@ -75,11 +78,14 @@ a{
 	font-weight:bolder;
 }
 
+/**--------------------------Index.php------------------------*/
+
 .deck-holder {
 	text-align: center;
-	background-color: #f6f6f8;
+	background-color: rgba(255,255,255,0.8);
 	position: absolute;
 	width: 100%;
+	border-radius: 10px;
 }
 
 .deck-sorter{
@@ -139,6 +145,42 @@ a{
 	padding: 0;
 	opacity: 0;
 }
+
+
+
+/** ------------Contact.php--------------*/
+
+.contactBody {
+	
+	background: url("../img/wallpaper2you_276915.jpg") no-repeat fixed;
+	background-size: cover;
+	height:100%;
+	position: relative;
+}
+
+.formbody{
+	background-color: black;
+	opacity: 0.75;
+    
+	font-size: 14px;
+	width: 60%;
+	margin: 0 auto;
+	padding-top: 8px;
+	
+	
+	
+}
+
+form {
+	
+  
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+	
+}
+
+
 
 /** ----------------------------MEDIA CSS------------------- */
 
