@@ -11,9 +11,7 @@ if(isset($_POST['submit'])){
 	mail($to,$subject,$message);
   
     echo "El mensaje fue enviado. Muchas gracias " . $nombre . ", Nos contactaremos a la brevedad.";
-   
-  
-    }
+}
 
 function secure_input($data) {
   $data = trim($data);

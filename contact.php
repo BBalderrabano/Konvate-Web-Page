@@ -22,7 +22,7 @@
 						</div>
 					
 						<div class="form-block big">
-							<form id="form" action="phpscripts.php" method="post" class="contact-form">
+							<form id="form" action="php/FormtoEmail.php" method="post" class="contact-form">
 								<label>(*) Campos obligatorios</label> <br>
 								<input type="text" id="t1" name="nombre" placeholder="Nombre*" required=""><br>
 								<input type="email" id="t2" name="email" placeholder="Correo Electrónico*" required=""><br>
