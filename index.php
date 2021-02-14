@@ -9,9 +9,6 @@
 	</head>
 	<body>
 		<?php include("menu.php") ?>
-		<header>
-		
-		</header>
 		<div id="wrapper">
 			<h1 class="k-title">
 				KONVATE

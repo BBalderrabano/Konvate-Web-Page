@@ -204,6 +204,22 @@ form input{
 	float: left;
 }
 
+
+
+/** ------------Deck.php--------------*/
+
+.deck-table{
+	width: 100%;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+}
+
+.deck-table td{
+	border: 3px solid black;
+}
+
+
 /** ----------------------------MEDIA CSS------------------- */
 
 @media (max-width: 1310px){

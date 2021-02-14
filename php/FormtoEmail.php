@@ -1,4 +1,7 @@
 <?php 
+ini_set('display_errors', 0);
+error_reporting(E_ERROR | E_WARNING | E_PARSE); 
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $to = "konvatecg@hotmail.com"; // this is your Email address
     $from = secure_input($_POST['email']); // this is the sender's Email address
@@ -8,14 +11,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$subject = "Mail de ". $nombre;
     $message = $nombre . " "  . " escribió lo siguiente:  \n\n" . $text . "\n\n Información de contacto: \n"  . $from . "\n". $phone;
 
-	$res = mail($to,$subject,$message);
-		
-	if($res){
-		echo "El mensaje fue enviado. Muchas gracias " . $nombre . ", Nos contactaremos a la brevedad.";
+	$mail_status = mail($to,$subject,$message);
+	
+	if($mail_status){
+		$text = "El mensaje fue enviado. Muchas gracias " . $nombre . ", Nos contactaremos a la brevedad.";
 	}
 	else{
-		echo "El mensaje no fue enviado";
+		$text = "El mensaje no fue enviado, inténtelo nuevamente";
 	}
+	
+	$response = array('mail_status' => $mail_status, 'text' => $text);
+	
+	echo json_encode($response);
 }
 
 function secure_input($data) {
