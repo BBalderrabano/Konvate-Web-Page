@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2021 at 10:33 PM
+-- Generation Time: Feb 20, 2021 at 10:36 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -26,23 +26,27 @@ SET time_zone = "+00:00";
 -- Table structure for table `card_list`
 --
 
-DROP TABLE IF EXISTS `card_list`;
-CREATE TABLE IF NOT EXISTS `card_list` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `card_list` (
+  `id` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `text` varchar(255) NOT NULL,
   `image_url` varchar(255) NOT NULL,
   `is_lightning` tinyint(1) NOT NULL,
-  `deck_id` int(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `deck_id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Truncate table before insert `card_list`
+--
+
+TRUNCATE TABLE `card_list`;
 --
 -- Dumping data for table `card_list`
 --
 
-UPDATE `card_list` SET `id` = 1,`name` = 'Flecha',`text` = 'Coloca 1 \r\nEsta carta se mantiene en la mano si no la jugaste',`image_url` = 'pictures/arrow.png',`is_lightning` = 0,`deck_id` = 1 WHERE `card_list`.`id` = 1;
-UPDATE `card_list` SET `id` = 2,`name` = 'Mina',`text` = 'Coloca 1 \r\nEsta carta no le gusta a Archa, a el le gusta los tipos',`image_url` = 'pictures/arrow.png',`is_lightning` = 0,`deck_id` = 1 WHERE `card_list`.`id` = 2;
+INSERT INTO `card_list` (`id`, `name`, `text`, `image_url`, `is_lightning`, `deck_id`) VALUES
+(1, 'Flecha', 'Coloca 1 \r\nEsta carta se mantiene en la mano si no la jugaste', 'pictures/arrow.png', 0, 1),
+(2, 'Mina', 'Coloca 1 \r\nEsta carta no le gusta a Archa, a el le gusta los tipos', 'pictures/arrow.png', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -50,27 +54,31 @@ UPDATE `card_list` SET `id` = 2,`name` = 'Mina',`text` = 'Coloca 1 \r\nEsta cart
 -- Table structure for table `deck_highlights`
 --
 
-DROP TABLE IF EXISTS `deck_highlights`;
-CREATE TABLE IF NOT EXISTS `deck_highlights` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `deck_highlights` (
+  `id` int(11) NOT NULL,
   `deck_id` int(11) NOT NULL,
   `time_start` date NOT NULL,
   `time_end` date NOT NULL,
-  `is_default` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+  `is_default` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Truncate table before insert `deck_highlights`
+--
+
+TRUNCATE TABLE `deck_highlights`;
 --
 -- Dumping data for table `deck_highlights`
 --
 
-UPDATE `deck_highlights` SET `id` = 1,`deck_id` = 1,`time_start` = '0000-00-00',`time_end` = '0000-00-00',`is_default` = 1 WHERE `deck_highlights`.`id` = 1;
-UPDATE `deck_highlights` SET `id` = 2,`deck_id` = 2,`time_start` = '0000-00-00',`time_end` = '0000-00-00',`is_default` = 1 WHERE `deck_highlights`.`id` = 2;
-UPDATE `deck_highlights` SET `id` = 3,`deck_id` = 9,`time_start` = '0000-00-00',`time_end` = '0000-00-00',`is_default` = 1 WHERE `deck_highlights`.`id` = 3;
-UPDATE `deck_highlights` SET `id` = 4,`deck_id` = 10,`time_start` = '0000-00-00',`time_end` = '0000-00-00',`is_default` = 1 WHERE `deck_highlights`.`id` = 4;
-UPDATE `deck_highlights` SET `id` = 5,`deck_id` = 11,`time_start` = '0000-00-00',`time_end` = '0000-00-00',`is_default` = 1 WHERE `deck_highlights`.`id` = 5;
-UPDATE `deck_highlights` SET `id` = 6,`deck_id` = 12,`time_start` = '0000-00-00',`time_end` = '0000-00-00',`is_default` = 1 WHERE `deck_highlights`.`id` = 6;
-UPDATE `deck_highlights` SET `id` = 12,`deck_id` = 14,`time_start` = '2021-01-26',`time_end` = '2021-01-26',`is_default` = 1 WHERE `deck_highlights`.`id` = 12;
+INSERT INTO `deck_highlights` (`id`, `deck_id`, `time_start`, `time_end`, `is_default`) VALUES
+(1, 1, '0000-00-00', '0000-00-00', 1),
+(2, 2, '0000-00-00', '0000-00-00', 1),
+(3, 9, '0000-00-00', '0000-00-00', 1),
+(4, 10, '0000-00-00', '0000-00-00', 1),
+(5, 11, '0000-00-00', '0000-00-00', 1),
+(6, 12, '0000-00-00', '0000-00-00', 1),
+(12, 14, '2021-01-26', '2021-01-26', 1);
 
 -- --------------------------------------------------------
 
@@ -78,29 +86,33 @@ UPDATE `deck_highlights` SET `id` = 12,`deck_id` = 14,`time_start` = '2021-01-26
 -- Table structure for table `deck_list`
 --
 
-DROP TABLE IF EXISTS `deck_list`;
-CREATE TABLE IF NOT EXISTS `deck_list` (
-  `id` int(126) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `deck_list` (
+  `id` int(126) NOT NULL,
   `name` varchar(256) NOT NULL,
   `image_url` varchar(256) NOT NULL,
   `icon_url` varchar(256) NOT NULL,
   `ab_amount` int(24) NOT NULL,
-  `def_amount` int(24) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+  `def_amount` int(24) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Truncate table before insert `deck_list`
+--
+
+TRUNCATE TABLE `deck_list`;
 --
 -- Dumping data for table `deck_list`
 --
 
-UPDATE `deck_list` SET `id` = 1,`name` = 'Arquero',`image_url` = 'pictures/carlos-amaral-elf-archer.jpg',`icon_url` = 'icons/A_Icon_Arquero.png',`ab_amount` = 4,`def_amount` = 5 WHERE `deck_list`.`id` = 1;
-UPDATE `deck_list` SET `id` = 2,`name` = 'Enano',`image_url` = 'pictures/cole-eastburn-dwarfblacksmith.jpg',`icon_url` = 'icons/A_Icon_Arquero.png',`ab_amount` = 5,`def_amount` = 5 WHERE `deck_list`.`id` = 2;
-UPDATE `deck_list` SET `id` = 9,`name` = 'Caballero',`image_url` = 'pictures/manuel-castanon-the-hopeful-knight-final.jpg',`icon_url` = 'icons/A_Icon_Arquero.png',`ab_amount` = 5,`def_amount` = 5 WHERE `deck_list`.`id` = 9;
-UPDATE `deck_list` SET `id` = 10,`name` = 'Orco',`image_url` = 'pictures/markus-neidel-ork-axe.jpg',`icon_url` = 'icons/A_Icon_Arquero.png',`ab_amount` = 5,`def_amount` = 5 WHERE `deck_list`.`id` = 10;
-UPDATE `deck_list` SET `id` = 11,`name` = 'Nigromante',`image_url` = 'pictures/peter-ortiz-necro-final2.jpg',`icon_url` = 'icons/A_Icon_Arquero.png',`ab_amount` = 5,`def_amount` = 5 WHERE `deck_list`.`id` = 11;
-UPDATE `deck_list` SET `id` = 12,`name` = 'Mago',`image_url` = 'pictures/alexandre-chaudret-bra-prophetie-royaume-lur-final-viewer.jpg',`icon_url` = 'icons/A_Icon_Arquero.png',`ab_amount` = 5,`def_amount` = 5 WHERE `deck_list`.`id` = 12;
-UPDATE `deck_list` SET `id` = 13,`name` = 'Alquimista',`image_url` = 'pictures/alexandre-chaudret-bra-prophetie-royaume-lur-final-viewer.jpg',`icon_url` = 'icons/A_Icon_Arquero.png',`ab_amount` = 5,`def_amount` = 5 WHERE `deck_list`.`id` = 13;
-UPDATE `deck_list` SET `id` = 14,`name` = 'Archa',`image_url` = 'pictures/alexandre-chaudret-bra-prophetie-royaume-lur-final-viewer.jpg',`icon_url` = 'icons/A_Icon_Arquero.png',`ab_amount` = 5,`def_amount` = 5 WHERE `deck_list`.`id` = 14;
+INSERT INTO `deck_list` (`id`, `name`, `image_url`, `icon_url`, `ab_amount`, `def_amount`) VALUES
+(1, 'Arquero', 'pictures/carlos-amaral-elf-archer.jpg', 'icons/A_Icon_Arquero.png', 4, 5),
+(2, 'Enano', 'pictures/cole-eastburn-dwarfblacksmith.jpg', 'icons/A_Icon_Arquero.png', 5, 5),
+(9, 'Caballero', 'pictures/manuel-castanon-the-hopeful-knight-final.jpg', 'icons/A_Icon_Arquero.png', 5, 5),
+(10, 'Orco', 'pictures/markus-neidel-ork-axe.jpg', 'icons/A_Icon_Arquero.png', 5, 5),
+(11, 'Nigromante', 'pictures/peter-ortiz-necro-final2.jpg', 'icons/A_Icon_Arquero.png', 5, 5),
+(12, 'Mago', 'pictures/alexandre-chaudret-bra-prophetie-royaume-lur-final-viewer.jpg', 'icons/A_Icon_Arquero.png', 5, 5),
+(13, 'Alquimista', 'pictures/alexandre-chaudret-bra-prophetie-royaume-lur-final-viewer.jpg', 'icons/A_Icon_Arquero.png', 5, 5),
+(14, 'Archa', 'pictures/alexandre-chaudret-bra-prophetie-royaume-lur-final-viewer.jpg', 'icons/A_Icon_Arquero.png', 5, 5);
 
 -- --------------------------------------------------------
 
@@ -108,26 +120,29 @@ UPDATE `deck_list` SET `id` = 14,`name` = 'Archa',`image_url` = 'pictures/alexan
 -- Table structure for table `navigation`
 --
 
-DROP TABLE IF EXISTS `navigation`;
-CREATE TABLE IF NOT EXISTS `navigation` (
-  `id` int(24) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `navigation` (
+  `id` int(24) NOT NULL,
   `description` varchar(24) NOT NULL,
   `link` varchar(126) NOT NULL,
   `display_order` int(24) NOT NULL,
-  `parent_id` int(24) NOT NULL,
-  KEY `id` (`id`),
-  KEY `id_2` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+  `parent_id` int(24) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Truncate table before insert `navigation`
+--
+
+TRUNCATE TABLE `navigation`;
 --
 -- Dumping data for table `navigation`
 --
 
-UPDATE `navigation` SET `id` = 1,`description` = 'Home',`link` = 'index.php',`display_order` = 0,`parent_id` = 0 WHERE `navigation`.`id` = 1 AND `navigation`.`description` = 'Home' AND `navigation`.`link` = 'index.php' AND `navigation`.`display_order` = 0 AND `navigation`.`parent_id` = 0;
-UPDATE `navigation` SET `id` = 2,`description` = 'Mazos',`link` = 'decks.php',`display_order` = 1,`parent_id` = 0 WHERE `navigation`.`id` = 2 AND `navigation`.`description` = 'Mazos' AND `navigation`.`link` = 'decks.php' AND `navigation`.`display_order` = 1 AND `navigation`.`parent_id` = 0;
-UPDATE `navigation` SET `id` = 7,`description` = 'Manual',`link` = 'manual.php',`display_order` = 2,`parent_id` = 0 WHERE `navigation`.`id` = 7 AND `navigation`.`description` = 'Manual' AND `navigation`.`link` = 'manual.php' AND `navigation`.`display_order` = 2 AND `navigation`.`parent_id` = 0;
-UPDATE `navigation` SET `id` = 8,`description` = 'Acerca de Nosotros',`link` = 'about.php',`display_order` = 3,`parent_id` = 0 WHERE `navigation`.`id` = 8 AND `navigation`.`description` = 'Acerca de Nosotros' AND `navigation`.`link` = 'about.php' AND `navigation`.`display_order` = 3 AND `navigation`.`parent_id` = 0;
-UPDATE `navigation` SET `id` = 9,`description` = 'Contactenos',`link` = 'contact.php',`display_order` = 4,`parent_id` = 0 WHERE `navigation`.`id` = 9 AND `navigation`.`description` = 'Contactenos' AND `navigation`.`link` = 'contact.php' AND `navigation`.`display_order` = 4 AND `navigation`.`parent_id` = 0;
+INSERT INTO `navigation` (`id`, `description`, `link`, `display_order`, `parent_id`) VALUES
+(1, 'Home', 'index.php', 0, 0),
+(2, 'Mazos', 'decks.php', 1, 0),
+(7, 'Manual', 'manual.php', 2, 0),
+(8, 'Acerca de Nosotros', 'about.php', 3, 0),
+(9, 'Contactenos', 'contact.php', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -135,19 +150,77 @@ UPDATE `navigation` SET `id` = 9,`description` = 'Contactenos',`link` = 'contact
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `username` varchar(126) NOT NULL,
   `password` varchar(126) NOT NULL,
   `nickname` varchar(126) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Truncate table before insert `users`
+--
+
+TRUNCATE TABLE `users`;
+--
 -- Dumping data for table `users`
 --
 
-UPDATE `users` SET `username` = 'julian',`password` = '123',`nickname` = 'archa' WHERE `users`.`username` = 'julian' AND `users`.`password` = '123' AND `users`.`nickname` = 'archa';
+INSERT INTO `users` (`username`, `password`, `nickname`) VALUES
+('julian', '123', 'archa');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `card_list`
+--
+ALTER TABLE `card_list`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `deck_highlights`
+--
+ALTER TABLE `deck_highlights`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `deck_list`
+--
+ALTER TABLE `deck_list`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `navigation`
+--
+ALTER TABLE `navigation`
+  ADD KEY `id` (`id`),
+  ADD KEY `id_2` (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `card_list`
+--
+ALTER TABLE `card_list`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `deck_highlights`
+--
+ALTER TABLE `deck_highlights`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `deck_list`
+--
+ALTER TABLE `deck_list`
+  MODIFY `id` int(126) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `navigation`
+--
+ALTER TABLE `navigation`
+  MODIFY `id` int(24) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
