@@ -3,7 +3,7 @@ include('connection.php');
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
-	if($_POST["deck_id"] == null){
+	if(!isset($_POST["deck_id"]) || is_null($_POST["deck_id"])){
 		$result = mysqli_query($conn, 'SELECT * FROM `deck_list`');
 
 		if(!$result){

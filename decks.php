@@ -6,11 +6,25 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="scripts/main-scripts.js"></script>
 		<title>Konvate</title>
+		<style>
+			.menu-bar{
+				position: unset!important;
+			}
+		</style>
 	</head>
 	<body>
 		<?php include("menu.php") ?>
 		<script>
 		$( document ).ready(function(){
+			
+			$(window).bind('scroll', function () {
+				if ($(window).scrollTop() > 100) {
+					
+					$('.anchor-top').fadeIn();
+				} else {
+					$('.anchor-top').fadeOut();
+				}
+			});
 			
 			$.ajax({
 				type: 'POST',
@@ -35,6 +49,38 @@
 																			"<td>" +
 																			data[d].def + 
 																			"</td>");
+							$("#deck-table").html($("#deck-table").html() + "<tr>"+
+							
+																			"<td><img src='"+data[d].icon+"'>" +
+																			"</td>" +
+																			
+																			"<td>" +
+																			data[d].deck_name + 
+																			"</td>" +
+																			
+																			"<td>" +
+																			data[d].ab + 
+																			"</td>" +
+																			
+																			"<td>" +
+																			data[d].def + 
+																			"</td>");												
+							$("#deck-table").html($("#deck-table").html() + "<tr>"+
+							
+																			"<td><img src='"+data[d].icon+"'>" +
+																			"</td>" +
+																			
+																			"<td>" +
+																			data[d].deck_name + 
+																			"</td>" +
+																			
+																			"<td>" +
+																			data[d].ab + 
+																			"</td>" +
+																			
+																			"<td>" +
+																			data[d].def + 
+																			"</td>");											
 						});
 					}
 			});

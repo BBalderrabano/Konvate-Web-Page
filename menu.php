@@ -16,3 +16,13 @@
 ?>
 
 </menu>
+
+<script>
+	function goTop(){
+		$(document).scrollTop(0);
+		$(".anchor-top").css('display', 'none');
+	}
+</script>
+
+<div onclick="goTop()" class="anchor-top"></div>
+

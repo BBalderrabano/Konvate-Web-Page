@@ -29,8 +29,6 @@ h2 {
 	font-size: 60px;
 }
 
-
-
 h3{
 	margin-left: 150px;
 	margin-right: 150px;
@@ -50,9 +48,10 @@ a{
 
 #wrapper{
 	width:100%;
-	height:100%;
 	color:white;
 }
+
+/**--------------------------Menu.php------------------------*/
 
 .menu-bar{
 	position: sticky;
@@ -72,6 +71,19 @@ a{
 
 .menu-bar menuitem:hover{
 	font-weight:bolder;
+}
+
+.anchor-top {
+	position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    top: 15px;
+    right: 15px;
+    display: none;
+    z-index: 999;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 /**--------------------------Index.php------------------------*/
