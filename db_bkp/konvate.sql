@@ -25,16 +25,6 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `card_list`
 --
-
-CREATE TABLE `card_list` (
-  `id` int(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `text` varchar(255) NOT NULL,
-  `image_url` varchar(255) NOT NULL,
-  `is_lightning` tinyint(1) NOT NULL,
-  `deck_id` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Dumping data for table `card_list`
 --
@@ -48,15 +38,6 @@ INSERT INTO `card_list` (`id`, `name`, `text`, `image_url`, `is_lightning`, `dec
 --
 -- Table structure for table `deck_highlights`
 --
-
-CREATE TABLE `deck_highlights` (
-  `id` int(11) NOT NULL,
-  `deck_id` int(11) NOT NULL,
-  `time_start` date NOT NULL,
-  `time_end` date NOT NULL,
-  `is_default` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Dumping data for table `deck_highlights`
 --
@@ -71,19 +52,6 @@ INSERT INTO `deck_highlights` (`id`, `deck_id`, `time_start`, `time_end`, `is_de
 (12, 14, '2021-01-26', '2021-01-26', 1);
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `deck_list`
---
-
-CREATE TABLE `deck_list` (
-  `id` int(126) NOT NULL,
-  `name` varchar(256) NOT NULL,
-  `image_url` varchar(256) NOT NULL,
-  `icon_url` varchar(256) NOT NULL,
-  `ab_amount` int(24) NOT NULL,
-  `def_amount` int(24) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `deck_list`
@@ -102,18 +70,6 @@ INSERT INTO `deck_list` (`id`, `name`, `image_url`, `icon_url`, `ab_amount`, `de
 -- --------------------------------------------------------
 
 --
--- Table structure for table `navigation`
---
-
-CREATE TABLE `navigation` (
-  `id` int(24) NOT NULL,
-  `description` varchar(24) NOT NULL,
-  `link` varchar(126) NOT NULL,
-  `display_order` int(24) NOT NULL,
-  `parent_id` int(24) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
 -- Dumping data for table `navigation`
 --
 
@@ -125,17 +81,6 @@ INSERT INTO `navigation` (`id`, `description`, `link`, `display_order`, `parent_
 (9, 'Contactenos', 'contact.php', 4, 0);
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `username` varchar(126) NOT NULL,
-  `password` varchar(126) NOT NULL,
-  `nickname` varchar(126) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Dumping data for table `users`
 --

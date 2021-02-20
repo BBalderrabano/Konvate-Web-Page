@@ -206,9 +206,11 @@ form input{
 
 .deck-table{
 	width: 100%;
-    color: black;
+    color: white;
     font-size: 30px;
     text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    font-weight: bold;
 }
 
 .deck-table td{
