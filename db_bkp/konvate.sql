@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2021 at 11:27 PM
+-- Generation Time: Feb 20, 2021 at 10:21 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -40,7 +40,8 @@ CREATE TABLE `card_list` (
 --
 
 INSERT INTO `card_list` (`id`, `name`, `text`, `image_url`, `is_lightning`, `deck_id`) VALUES
-(1, 'Flecha', 'Coloca 1 \r\nEsta carta se mantiene en la mano si no la jugaste', 'pictures/arrow.png', 0, 1);
+(1, 'Flecha', 'Coloca 1 \r\nEsta carta se mantiene en la mano si no la jugaste', 'pictures/arrow.png', 0, 1),
+(2, 'Mina', 'Coloca 1 \r\nEsta carta no le gusta a Archa, a el le gusta los tipos', 'pictures/arrow.png', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -179,7 +180,7 @@ ALTER TABLE `navigation`
 -- AUTO_INCREMENT for table `card_list`
 --
 ALTER TABLE `card_list`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `deck_highlights`
 --
